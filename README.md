@@ -1838,6 +1838,7 @@ binance.withdraw("BTC", "1C5gqLRs96Xq4V2ZZAR1347yUCpHie7sa", 0.2);
 
 #### Withdraw in a specific network
 ```js
+// withdraw 79 USDT in TRC20 network
 binance.withdraw("USDT", "TFS7ErVVwRbZLC8eak9qEdNVMv7GetVTAt", 79, 'TRX');
 ```
 
