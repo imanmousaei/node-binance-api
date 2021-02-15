@@ -3334,13 +3334,13 @@ let api = function Binance( options = {} ) {
         * @param {string} asset - the asset symbol
         * @param {string} address - the wallet to transfer it to
         * @param {number} amount - the amount to transfer
-        * @param {number} network - the network to transfer in
+        * @param {string} network - the network to transfer in ( see all networks in coinInfo() )
         * @param {string} addressTag - and addtional address tag
         * @param {function} callback - the callback function
         * @param {string} name - the name to save the address as. Set falsy to prevent Binance saving to address book
         * @return {promise or undefined} - omitting the callback returns a promise
         */
-        withdraw: function ( asset, address, amount, network='', addressTag = false, callback = false, name = false ) {
+        withdraw: function ( asset, address, amount, network = false, addressTag = false, callback = false, name = false ) {
             let params = { asset, address, amount };
             if ( name ) params.name = name;
             if ( network ) params.network = network;
@@ -3360,6 +3360,31 @@ let api = function Binance( options = {} ) {
                 signedRequest( wapi + 'v3/withdraw.html', params, callback, 'POST' );
             }
         },
+
+        
+        /**
+         * Get All Coins' Information ( including all supported networks, etc. )
+         * @param {function} callback - the callback function
+         * @return {promise or undefined} - omitting the callback returns a promise
+         */
+        coinInfo: function ( callback = false ) {
+            let params = {  };
+            if ( !callback ) {
+                return new Promise( ( resolve, reject ) => {
+                    callback = ( error, response ) => {
+                        if ( error ) {
+                            reject( error );
+                        } else {
+                            resolve( response );
+                        }
+                    }
+                    signedRequest( sapi + 'v1/capital/config/getall', params, callback, 'GET' );
+                } );
+            } else {
+                signedRequest( sapi + 'v1/capital/config/getall', params, callback, 'GET' );
+            }
+        },
+
 
         /**
         * Get the Withdraws history for a given asset

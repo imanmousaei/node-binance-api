@@ -1842,6 +1842,258 @@ binance.withdraw("BTC", "1C5gqLRs96Xq4V2ZZAR1347yUCpHie7sa", 0.2);
 binance.withdraw("USDT", "TFS7ErVVwRbZLC8eak9qEdNVMv7GetVTAt", 79, 'TRX');
 ```
 
+
+### Information
+#### Get All Coins' Information ( including all supported networks, etc. )
+```js
+const info = await binance.coinInfo();
+console.info(info);
+```
+
+<details>
+ <summary>View Response</summary>
+
+```javascript
+[
+    {
+      "coin": "USDT",
+      "depositAllEnable": true,
+      "withdrawAllEnable": true,
+      "name": "TetherUS",
+      "free": "44.97391278",
+      "locked": "0",
+      "freeze": "0",
+      "withdrawing": "0",
+      "ipoing": "0",
+      "ipoable": "0",
+      "storage": "0",
+      "isLegalMoney": false,
+      "trading": true,
+      "networkList": [
+        {
+          "network": "BNB",
+          "coin": "USDT",
+          "withdrawIntegerMultiple": "0.000001",
+          "isDefault": false,
+          "depositEnable": true,
+          "withdrawEnable": true,
+          "depositDesc": "",
+          "withdrawDesc": "",
+          "specialTips": "Both a MEMO and an Address are required to successfully deposit your USDT BEP2 tokens to Binance.",
+          "name": "BEP2",
+          "resetAddressStatus": false,
+          "addressRegex": "^(bnb1)[0-9a-z]{38}$",
+          "memoRegex": "^[0-9A-Za-z\\-_]{1,120}$",
+          "withdrawFee": "0.13",
+          "withdrawMin": "0.26",
+          "withdrawMax": "0",
+          "minConfirm": 1,
+          "unLockConfirm": 0
+        },
+        {
+          "network": "BSC",
+          "coin": "USDT",
+          "withdrawIntegerMultiple": "0.00000001",
+          "isDefault": false,
+          "depositEnable": true,
+          "withdrawEnable": true,
+          "depositDesc": "",
+          "withdrawDesc": "",
+          "specialTips": "",
+          "name": "BEP20 (BSC)",
+          "resetAddressStatus": false,
+          "addressRegex": "^(0x)[0-9A-Fa-f]{40}$",
+          "memoRegex": "",
+          "withdrawFee": "0.27",
+          "withdrawMin": "0.54",
+          "withdrawMax": "0",
+          "minConfirm": 15,
+          "unLockConfirm": 0
+        },
+        {
+          "network": "ETH",
+          "coin": "USDT",
+          "withdrawIntegerMultiple": "0.000001",
+          "isDefault": true,
+          "depositEnable": true,
+          "withdrawEnable": true,
+          "depositDesc": "",
+          "withdrawDesc": "",
+          "specialTips": "",
+          "name": "ERC20",
+          "resetAddressStatus": false,
+          "addressRegex": "^(0x)[0-9A-Fa-f]{40}$",
+          "memoRegex": "",
+          "withdrawFee": "12",
+          "withdrawMin": "24",
+          "withdrawMax": "0",
+          "minConfirm": 12,
+          "unLockConfirm": 0
+        },
+        {
+          "network": "OMNI",
+          "coin": "USDT",
+          "withdrawIntegerMultiple": "0.000001",
+          "isDefault": false,
+          "depositEnable": true,
+          "withdrawEnable": true,
+          "depositDesc": "",
+          "withdrawDesc": "",
+          "specialTips": "",
+          "name": "OMNI",
+          "resetAddressStatus": false,
+          "addressRegex": "^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$|^(bc1)[0-9A-Za-z]{39}$",
+          "memoRegex": "",
+          "withdrawFee": "24",
+          "withdrawMin": "48",
+          "withdrawMax": "0",
+          "minConfirm": 1,
+          "unLockConfirm": 2
+        },
+        {
+          "network": "TRX",
+          "coin": "USDT",
+          "withdrawIntegerMultiple": "0.00000001",
+          "isDefault": false,
+          "depositEnable": true,
+          "withdrawEnable": true,
+          "depositDesc": "",
+          "withdrawDesc": "",
+          "specialTips": "",
+          "name": "TRC20",
+          "resetAddressStatus": false,
+          "addressRegex": "^T[1-9A-HJ-NP-Za-km-z]{33}$",
+          "memoRegex": "",
+          "withdrawFee": "0",
+          "withdrawMin": "1",
+          "withdrawMax": "0",
+          "minConfirm": 1,
+          "unLockConfirm": 0
+        }
+      ]
+    },
+    {
+      "coin": "BTC",
+      "depositAllEnable": true,
+      "withdrawAllEnable": true,
+      "name": "Bitcoin",
+      "free": "0.00039309",
+      "locked": "0",
+      "freeze": "0",
+      "withdrawing": "0",
+      "ipoing": "0",
+      "ipoable": "0",
+      "storage": "0",
+      "isLegalMoney": false,
+      "trading": true,
+      "networkList": [
+        {
+          "network": "BNB",
+          "coin": "BTC",
+          "withdrawIntegerMultiple": "0.00000001",
+          "isDefault": false,
+          "depositEnable": true,
+          "withdrawEnable": true,
+          "depositDesc": "",
+          "withdrawDesc": "",
+          "specialTips": "Both a MEMO and an Address are required to successfully deposit your BEP2-BTCB tokens to Binance.",
+          "name": "BEP2",
+          "resetAddressStatus": false,
+          "addressRegex": "^(bnb1)[0-9a-z]{38}$",
+          "memoRegex": "^[0-9A-Za-z\\-_]{1,120}$",
+          "withdrawFee": "0.0000028",
+          "withdrawMin": "0.0000056",
+          "withdrawMax": "0",
+          "minConfirm": 1,
+          "unLockConfirm": 0
+        },
+        {
+          "network": "BSC",
+          "coin": "BTC",
+          "withdrawIntegerMultiple": "0.00000001",
+          "isDefault": false,
+          "depositEnable": true,
+          "withdrawEnable": true,
+          "depositDesc": "",
+          "withdrawDesc": "",
+          "specialTips": "",
+          "name": "BEP20 (BSC)",
+          "resetAddressStatus": false,
+          "addressRegex": "^(0x)[0-9A-Fa-f]{40}$",
+          "memoRegex": "",
+          "withdrawFee": "0.0000055",
+          "withdrawMin": "0.000011",
+          "withdrawMax": "0",
+          "minConfirm": 15,
+          "unLockConfirm": 0
+        },
+        {
+          "network": "BTC",
+          "coin": "BTC",
+          "withdrawIntegerMultiple": "0.00000001",
+          "isDefault": true,
+          "depositEnable": true,
+          "withdrawEnable": true,
+          "depositDesc": "",
+          "withdrawDesc": "",
+          "specialTips": "",
+          "name": "BTC",
+          "resetAddressStatus": false,
+          "addressRegex": "^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$|^(bc1)[0-9A-Za-z]{39,59}$",
+          "memoRegex": "",
+          "withdrawFee": "0.0005",
+          "withdrawMin": "0.001",
+          "withdrawMax": "0",
+          "minConfirm": 1,
+          "unLockConfirm": 2
+        },
+        {
+          "network": "ETH",
+          "coin": "BTC",
+          "withdrawIntegerMultiple": "0.00000001",
+          "isDefault": false,
+          "depositEnable": true,
+          "withdrawEnable": true,
+          "depositDesc": "",
+          "withdrawDesc": "",
+          "specialTips": "This deposit address supports ERC20 BBTC tokens. Please ensure your destination address supports BBTC tokens under the contract address ending in 22541.",
+          "name": "ERC20",
+          "resetAddressStatus": false,
+          "addressRegex": "^(0x)[0-9A-Fa-f]{40}$",
+          "memoRegex": "",
+          "withdrawFee": "0.0003",
+          "withdrawMin": "0.0006",
+          "withdrawMax": "0",
+          "minConfirm": 12,
+          "unLockConfirm": 0
+        },
+        {
+          "network": "SEGWITBTC",
+          "coin": "BTC",
+          "withdrawIntegerMultiple": "0.00000001",
+          "isDefault": false,
+          "depositEnable": true,
+          "withdrawEnable": false,
+          "depositDesc": "",
+          "specialTips": "",
+          "name": "BTC(SegWit)",
+          "resetAddressStatus": false,
+          "addressRegex": "",
+          "memoRegex": "",
+          "withdrawFee": "0.0005",
+          "withdrawMin": "0.001",
+          "withdrawMax": "0",
+          "minConfirm": 1,
+          "unLockConfirm": 2
+        }
+      ]
+    }
+]
+```
+</details>
+
+
+
 # Binance Margin API
 
 #### Transfer from Main account to Margin account
