@@ -1828,7 +1828,7 @@ binance.withdrawHistory((error, response) => {
 let address = "44tLjmXrQNrWJ5NBsEj2R77ZBEgDa3fEe9GLpSf2FRmhexPvfYDUAB7EXX1Hdb3aMQ9FLqdJ56yaAhiXoRsceGJCRS3Jxkn";
 let addressTag = "0e5e38a01058dbf64e53a4333a5acf98e0d5feb8e523d32e3186c664a9c762c1";
 let amount = 0.1;
-binance.withdraw("XMR", address, amount, addressTag);
+binance.withdraw("XMR", address, amount, false, addressTag);
 ```
 
 #### Withdraw
